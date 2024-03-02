@@ -22,10 +22,8 @@ public class User {
     private String username;
     @Column(length = 100)
     private String password;
-    @Column(length =100)
-    private String email;
+
     private boolean enabled;
     @ManyToOne
-    @JoinColumn(name = "rol_id")
     private Rol rol;
 }

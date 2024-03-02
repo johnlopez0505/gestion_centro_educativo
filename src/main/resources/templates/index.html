@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestion Educativa</title>
+  <th:block th:replace="~{fragmentos/general.html :: headerfiles}"></th:block>
+</head>
+
+<body>
+  <div class="container" style="height:50px;"></div>
+    <div class="container mb-5" th:replace="~{fragmentos/general.html :: navigation}"> </div>
+
+    <div class="container mt-5">
+      <div class="card m-4" style="width: 18rem;">
+        <img src="img/img.jpeg" class="card-img-top" alt="Zapato Veloz">
+        <div class="card-body">
+          <h5 class="card-title">Gestion Educativa</h5>
+          <p class="card-text">Bienvenido a nuestra tienda virtual donde encontrará cualquier tipo de calzado.</p>
+        </div>
+      </div>
+    </div>
+    <div th:replace="~{fragmentos/general.html :: footer}"></div>
+</body>
+
+</html>

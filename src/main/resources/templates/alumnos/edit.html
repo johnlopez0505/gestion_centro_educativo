@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestion Academica</title>
+  <th:block th:replace="~{fragmentos/general.html :: headerfiles}"></th:block>
+</head>
+
+<body>
+    <div class="container" style="height:50px;"></div>
+    <div class="container">
+    <div th:replace="~{fragmentos/general.html :: navigation}"> </div>
+        <div class="container mt-5">
+            <h1 class="text-center ">Editar Alumno</h1>
+            <form 
+                th:action="@{/alumnos/add}"
+                th:object="${alumno}"
+                method="post">
+                <input type="number" name="id" hidden th:value="${alumno.id}" />
+
+                <div class="input-group mb-3 mx-auto mt-5" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px" for="nombre">Nombre:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="nombre" th:value="${alumno.nombre}" required=true/>
+                </div>
+                <div class="input-group mb-3 mx-auto mt-2" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px"  for="apellido">Apellido:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="apellido" th:value="${alumno.apellido}" required=true/>
+                </div>
+                <div class="input-group mb-3 mx-auto mt-2" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px"  for="telefono">Telefono:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="telefono" th:value="${alumno.telefono}" required=true/>
+                </div>
+                <div class="input-group mb-3 mx-auto mt-2" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px"  for="email">Email:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="email" th:value="${alumno.email}" required=true/>
+                </div>
+
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <button type='submit' class="btn btn-outline-success"> Guardar Cambios</button>
+                </div>
+                </br>
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <a href='/alumnos' class="btn btn-outline-success"> Volver a la Lista</a>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+    <div th:replace="~{fragmentos/general.html :: footer}"></div>
+</div>
+</body>
+
+</html>

@@ -1,128 +1,89 @@
-INSERT INTO alumno (nombre, apellido, email, telefono) VALUES
-('Juan', 'Pérez', 'juan.perez@example.com', '123456789'),
-('María', 'Gómez', 'maria.gomez@example.com', '987654321'),
-('Luis', 'Martínez', 'luis.martinez@example.com', '555111222'),
-('Ana', 'Fernández', 'ana.fernandez@example.com', '111222333'),
-('Carlos', 'García', 'carlos.garcia@example.com', '444555666'),
-('Laura', 'Rodríguez', 'laura.rodriguez@example.com', '777888999'),
-('Diego', 'López', 'diego.lopez@example.com', '666555444'),
-('Sara', 'Hernández', 'sara.hernandez@example.com', '333222111'),
-('Pedro', 'Díaz', 'pedro.diaz@example.com', '999888777'),
-('Carmen', 'Sánchez', 'carmen.sanchez@example.com', '888777666'),
-('Javier', 'Romero', 'javier.romero@example.com', '222333444'),
-('Elena', 'Alvarez', 'elena.alvarez@example.com', '444555666'),
-('Antonio', 'Jiménez', 'antonio.jimenez@example.com', '111222333'),
-('Rocío', 'Molina', 'rocio.molina@example.com', '777888999'),
-('Miguel', 'Serrano', 'miguel.serrano@example.com', '123456789'),
-('Isabel', 'Torres', 'isabel.torres@example.com', '555111222'),
-('José', 'Flores', 'jose.flores@example.com', '987654321'),
-('Paula', 'Ramírez', 'paula.ramirez@example.com', '444555666'),
-('Alberto', 'Garrido', 'alberto.garrido@example.com', '999888777'),
-('Silvia', 'Ortega', 'silvia.ortega@example.com', '666555444'),
-('Raúl', 'Cruz', 'raul.cruz@example.com', '333222111'),
-('Marta', 'Gutiérrez', 'marta.gutierrez@example.com', '123456789'),
-('Adrián', 'Reyes', 'adrian.reyes@example.com', '555111222'),
-('Eva', 'Luna', 'eva.luna@example.com', '444555666'),
-('Iván', 'Ruiz', 'ivan.ruiz@example.com', '123456789'),
-('Beatriz', 'Navarro', 'beatriz.navarro@example.com', '987654321'),
-('Ángel', 'Delgado', 'angel.delgado@example.com', '555111222'),
-('Cristina', 'Morales', 'cristina.morales@example.com', '666555444'),
-('Fernando', 'Guerrero', 'fernando.guerrero@example.com', '444555666'),
-('Lucía', 'Cabrera', 'lucia.cabrera@example.com', '777888999'),
-('Manuel', 'Rey', 'manuel.rey@example.com', '111222333');
 
-INSERT INTO alumno (nombre, apellido, email, telefono) VALUES
-('Gabriel', 'Vargas', 'gabriel.vargas@example.com', '555555555'),
-('Patricia', 'Soto', 'patricia.soto@example.com', '111111111'),
-('Jorge', 'Moreno', 'jorge.moreno@example.com', '999999999'),
-('Natalia', 'Cruz', 'natalia.cruz@example.com', '777777777'),
-('Ricardo', 'López', 'ricardo.lopez@example.com', '333333333'),
-('Marina', 'Herrera', 'marina.herrera@example.com', '888888888'),
-('Alejandro', 'Ramírez', 'alejandro.ramirez@example.com', '222222222'),
-('Carolina', 'Ortega', 'carolina.ortega@example.com', '666666666'),
-('Héctor', 'Díaz', 'hector.diaz@example.com', '444444444'),
-('Sofía', 'Fuentes', 'sofia.fuentes@example.com', '555555555'),
-('Raul', 'Salazar', 'raul.salazar@example.com', '888888888'),
-('Gisela', 'Guzmán', 'gisela.guzman@example.com', '333333333'),
-('Martín', 'Rojas', 'martin.rojas@example.com', '666666666'),
-('Alicia', 'Mendoza', 'alicia.mendoza@example.com', '222222222'),
-('Federico', 'Castillo', 'federico.castillo@example.com', '444444444'),
-('Valeria', 'Nava', 'valeria.nava@example.com', '111111111'),
-('Pablo', 'Delgado', 'pablo.delgado@example.com', '999999999'),
-('Lorena', 'Reyes', 'lorena.reyes@example.com', '777777777'),
-('Roberto', 'Pérez', 'roberto.perez@example.com', '888888888'),
-('Elena', 'Gallardo', 'elena.gallardo@example.com', '555555555');
+INSERT INTO `rol` (`id`, `nombre`) VALUES (1,'gestor');
+INSERT INTO `rol` (`id`, `nombre`) VALUES (2,'alumno');
+INSERT INTO `rol` (`id`, `nombre`) VALUES (3,'profesor');
 
 
-INSERT INTO profesor (nombre, apellido, email) VALUES
-('Alejandro', 'Gómez', 'alejandro.gomez@example.com'),
-('Beatriz', 'López', 'beatriz.lopez@example.com'),
-('Carlos', 'Martínez', 'carlos.martinez@example.com'),
-('Diana', 'Fernández', 'diana.fernandez@example.com'),
-('Eduardo', 'García', 'eduardo.garcia@example.com'),
-('Fabiola', 'Hernández', 'fabiola.hernandez@example.com'),
-('Gabriel', 'Jiménez', 'gabriel.jimenez@example.com'),
-('Hilda', 'Ramírez', 'hilda.ramirez@example.com'),
-('Iván', 'Sánchez', 'ivan.sanchez@example.com'),
-('Jessica', 'Torres', 'jessica.torres@example.com');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,2,'1234','juan');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,2,'1234','alejandro');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,2,'1234','pablo');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,2,'1234','lorena');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,2,'1234','roberto');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,2,'1234','elena');
 
-
-INSERT INTO asignatura (nombre, curso, ciclo) VALUES
-('Procesos', '2023/2024', '2º DAM'),
-('Multimedia', '2023/2024', '2º DAM'),
-('Acceso a Datos', '2023/2024', '2º DAM'),
-('Empresa', '2023/2024', '2º DAM'),
-('Libre Configuración', '2023/2024', '2º DAM'),
-('SGE', '2023/2024', '2º DAM'),
-('Interface', '2023/2024', '2º DAM'),
-('Programación', '2º Dam', '2º DAM');
-
-
-INSERT INTO `users`(`username`,`password`)
-    VALUES ('john','1234');
-
-INSERT INTO `users`(`username`,`password`,`rol`,`alumno`)
-    VALUES ('juan','1234','alumno',1);
-
-INSERT INTO `users`(`username`,`password`,`rol`,`alumno`)
-    VALUES ('pedro','1234','alumno',9);
-
-INSERT INTO `users`(`username`,`password`,`rol`,`alumno`)
-    VALUES ('pablo','1234','alumno',48);
-
-INSERT INTO `users`(`username`,`password`,`rol`,`profesor`)
-    VALUES ('alejandro','1234','profesor',1);
-
-INSERT INTO `users`(`username`,`password`,`rol`,`profesor`)
-    VALUES ('diana','1234','profesor',4);
-
-INSERT INTO `users`(`username`,`password`,`rol`,`profesor`)
-    VALUES ('gabriel','1234','profesor',7);
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','alejandro');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','beatriz');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','carlos');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','diana');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','eduardo');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','fabiola');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','gabriel');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','hilda');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','iván');
+INSERT INTO `user`(`enabled`, `rol_id`, `password`, `username`)  VALUES (1,3,'1234','jessica');
 
 
 
-INSERT INTO `asignatura_alumno`(`asignatura`,`alumno`)
-    VALUES (1,1);
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('1', '1');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('2', '2');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('2', '3');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('2', '4');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('2', '5');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('2', '6');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('2', '7');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '8');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '9');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '10');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '11');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '12');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '13');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '14');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '15');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '16');
+INSERT INTO `rol_usuarios` (`rol_id`, `usuarios_id`) VALUES ('3', '17');
 
-INSERT INTO `asignatura_alumno`(`asignatura`,`alumno`)
-    VALUES (2,20);
-
-INSERT INTO `asignatura_alumno`(`asignatura`,`alumno`)
-    VALUES (1,18);
-
-INSERT INTO `asignatura_alumno`(`asignatura`,`alumno`)
-    VALUES (8,48);
 
 
+INSERT INTO `alumno` (`usuario_id`, `telefono`, `apellido`, `nombre`, `email`) VALUES (1, '623260769', 'lopez', 'john', 'lopezcon1@hotmail.com');
+INSERT INTO `alumno` (`usuario_id`, `telefono`, `apellido`, `nombre`, `email`) VALUES (2,'123456789', 'Pérez','Juan', 'juan.perez@example.com');
+INSERT INTO `alumno` (`usuario_id`,`nombre`, `apellido`, `email`, `telefono`) VALUES (3,'Alejandro', 'Ramírez', 'alejandro.ramirez@example.com', '222222222');
+INSERT INTO `alumno` (`usuario_id`,`nombre`, `apellido`, `email`, `telefono`) VALUES (4,'Pablo', 'Delgado', 'pablo.delgado@example.com', '999999999');
+INSERT INTO `alumno` (`usuario_id`,`nombre`, `apellido`, `email`, `telefono`) VALUES (5,'Lorena', 'Reyes', 'lorena.reyes@example.com', '777777777');
+INSERT INTO `alumno` (`usuario_id`,`nombre`, `apellido`, `email`, `telefono`) VALUES (6,'Roberto', 'Pérez', 'roberto.perez@example.com', '888888888');
+INSERT INTO `alumno` (`usuario_id`,`nombre`, `apellido`, `email`, `telefono`) VALUES (7,'Elena', 'Gallardo', 'elena.gallardo@example.com', '555555555');
 
-INSERT INTO `asignatura_profesor`(`asignatura`,`profesor`)
-    VALUES (1,4);
 
-INSERT INTO `asignatura_profesor`(`asignatura`,`profesor`)
-    VALUES (2,4);
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (8,'Alejandro', 'Gómez', 'alejandro.gomez@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (9,'Beatriz', 'López', 'beatriz.lopez@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (10,'Carlos', 'Martínez', 'carlos.martinez@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (11,'Diana', 'Fernández', 'diana.fernandez@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (12,'Eduardo', 'García', 'eduardo.garcia@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (13,'Fabiola', 'Hernández', 'fabiola.hernandez@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (14,'Gabriel', 'Jiménez', 'gabriel.jimenez@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (15,'Hilda', 'Ramírez', 'hilda.ramirez@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (16,'Iván', 'Sánchez', 'ivan.sanchez@example.com');
+INSERT INTO `profesor` (`usuario_id`,`nombre`, `apellido`, `email`) VALUES (17,'Jessica', 'Torres', 'jessica.torres@example.com');
 
-INSERT INTO `asignatura_profesor`(`asignatura`,`profesor`)
-    VALUES (3,1);
 
-INSERT INTO `asignatura_profesor`(`asignatura`,`profesor`)
-    VALUES (1,2);
+INSERT INTO `asignatura` (`nombre`, `curso`, `ciclo`) VALUES ('Procesos', '2023/2024', '2º DAM');
+INSERT INTO `asignatura` (`nombre`, `curso`, `ciclo`) VALUES ('Multimedia', '2023/2024', '2º DAM');
+INSERT INTO `asignatura` (`nombre`, `curso`, `ciclo`) VALUES ('Acceso a Datos', '2023/2024', '2º DAM');
+INSERT INTO `asignatura` (`nombre`, `curso`, `ciclo`) VALUES ('Empresa', '2023/2024', '2º DAM');
+INSERT INTO `asignatura` (`nombre`, `curso`, `ciclo`) VALUES ('Libre Configuración', '2023/2024', '2º DAM');
+INSERT INTO `asignatura` (`nombre`, `curso`, `ciclo`) VALUES ('SGE', '2023/2024', '2º DAM');
+INSERT INTO `asignatura` (`nombre`, `curso`, `ciclo`) VALUES ('Interface', '2023/2024', '2º DAM');
+INSERT INTO `asignatura` (`nombre`, `curso`, `ciclo`) VALUES ('Programación', '2023/2024', '2º DAM');
+
+
+
+INSERT INTO `matricula_alumno`(`asignatura_id`,`alumno_id`)  VALUES (1,2);
+INSERT INTO `matricula_alumno`(`asignatura_id`,`alumno_id`) VALUES (2,3);
+INSERT INTO `matricula_alumno`(`asignatura_id`,`alumno_id`) VALUES (4,4);
+INSERT INTO `matricula_alumno`(`asignatura_id`,`alumno_id`) VALUES (2,5);
+
+
+
+INSERT INTO `matricula_profesor`(`asignatura_id`,`profesor_id`) VALUES (1,1)
+INSERT INTO `matricula_profesor`(`asignatura_id`,`profesor_id`) VALUES (2,2);
+INSERT INTO `matricula_profesor`(`asignatura_id`,`profesor_id`) VALUES (3,3);
+INSERT INTO `matricula_profesor`(`asignatura_id`,`profesor_id`) VALUES (1,4);

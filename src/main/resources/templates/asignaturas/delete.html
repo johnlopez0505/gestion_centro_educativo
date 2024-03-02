@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestion Academica</title>
+  <th:block th:replace="~{fragmentos/general.html :: headerfiles}"></th:block>
+</head>
+
+<body>
+    <div class="container" style="height:50px;"></div>
+    <div class="container">
+    <div th:replace="~{fragmentos/general.html :: navigation}"> </div>
+        <div class="container mt-5">
+            <h1 class="text-center ">Eliminar Asignatura</h1>
+            <p class="text-center"> ¿Estás seguro de que deseas eliminar la asignatura con el siguiente detalle?</p>
+            <form 
+                th:action="@{/asignaturas/delete/}+${asignatura.id}"
+                th:object="${asignatura}"
+                method="post">
+
+                <div class="input-group mb-3 mx-auto mt-5" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px" for="nombre">Nombre:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="nombre" th:value="${asignatura.nombre}" disabled/>
+                </div>
+                <div class="input-group mb-3 mx-auto mt-2" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px"  for="ciclo">Ciclo:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="ciclo" th:value="${asignatura.ciclo}" disabled/>
+                </div>
+                <div class="input-group mb-3 mx-auto mt-2" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px"  for="curso">Curso:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="curso" th:value="${asignatura.curso}" disabled/>
+                </div>
+            
+
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <button type='submit' class="btn btn-outline-success"> Borrar Asignatura</button>
+                </div>
+                </br>
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <a href='/asignaturas' class="btn btn-outline-success"> Volver a la Lista</a>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+    <div th:replace="~{fragmentos/general.html :: footer}"></div>
+</div>
+</body>
+
+</html>

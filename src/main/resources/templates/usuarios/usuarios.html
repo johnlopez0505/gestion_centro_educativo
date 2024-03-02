@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestion Academica</title>
+  <th:block th:replace="~{fragmentos/general.html :: headerfiles}"></th:block>
+</head>
+
+<body>
+  <div class="container">
+    <div th:replace="~{fragmentos/general.html :: navigation}"> </div>
+
+      <div class="input-group mb-3 mx-auto mt-5" style="width: 80%;">
+        <h3 class="mt-5">Lista de usuarios</h3>
+        <table class="table table-striped mt-2">
+          <thead>
+            <tr>
+              <td>enabled</td>
+              <td>id</td>
+              <td>username</td>
+              <td>password</td>
+              <td>Acciones</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="usuario: ${usuarios}">
+              <td th:text="${usuario.enabled}"></td>
+              <td th:text="${usuario.id}"></td>
+              <td th:text="${usuario.username}"></td>
+              <td th:text="${usuario.password}"></td>
+              <td>
+                <a class="btn btn-success" th:href="|/usuarios/edit/${usuario.id}|">Editar</a>
+                <a class="btn btn-danger" th:href="|/usuarios/delete/${usuario.id}|">Borrar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+  <div th:replace="~{fragmentos/general.html :: footer}"></div>
+</body>
+
+</html>

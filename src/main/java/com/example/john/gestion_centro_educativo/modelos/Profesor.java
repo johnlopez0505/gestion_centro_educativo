@@ -22,6 +22,6 @@ public class Profesor {
     private String apellido;
     @Column(length =100, unique = true)
     private String email;
-    @OneToOne(mappedBy = "profesor")
+    @OneToOne
     private User usuario;
 }

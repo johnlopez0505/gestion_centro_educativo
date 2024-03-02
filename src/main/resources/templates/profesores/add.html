@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestion Academica</title>
+  <th:block th:replace="~{fragmentos/general.html :: headerfiles}"></th:block>
+</head>
+
+<body>
+    <div class="container" style="height:50px;"></div>
+    <div class="container">
+    <div th:replace="~{fragmentos/general.html :: navigation}"> </div>
+        <div class="container mt-5">
+            <h1 class="text-center mb-3">Agregar un nuevo Profesor</h1>
+            <form 
+                th:action="@{/profesores/add}"
+                th:object="${profesor}"
+                method="post">
+
+                <div class="input-group mb-3 mx-auto mt-2" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px" for="nombre">Nombre:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="nombre" required=true  placeholder="Escriba aquí el nombre"/>
+                </div>
+                <div class="input-group mb-3 mx-auto mt-2" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px"  for="apellido">Apellido:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="apellido" required=true  placeholder="Escriba aquí el apellido"/>
+                </div>
+                <div class="input-group mb-3 mx-auto mt-2" style="width: 500px;">
+                    <label class="form-label input-group-text bg-success bg-gradient" style="width: 100px; height: 40px"  for="email">Email:</label>
+                    <input class="form-control border border-success " style="height: 40px" name="email" required=true  placeholder="Escriba aquí el email"/>
+                </div>
+
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <button type='submit' class="btn btn-outline-success"> Agregar Profesor</button>
+                </div>
+                </br>
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <a href='/profesores' class="btn btn-outline-success"> Volver a la Lista</a>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+    <div th:replace="~{fragmentos/general.html :: footer}"></div>
+</div>
+</body>
+
+</html>
