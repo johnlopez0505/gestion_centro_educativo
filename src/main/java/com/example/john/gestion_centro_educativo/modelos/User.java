@@ -6,8 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,7 +23,14 @@ public class User {
     @Column(length = 100)
     private String password;
 
+    @OneToOne
+    private Alumno alumno;
+
+    @OneToOne
+    private Profesor profesor;
+
     private boolean enabled;
+    
     @ManyToOne
     private Rol rol;
 }

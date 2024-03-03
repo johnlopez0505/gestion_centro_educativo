@@ -31,8 +31,9 @@
                     <td th:text="${alumno.telefono}"></td>
                     <td th:text="${alumno.email}"></td>
                     <td>
-                        <a class="btn btn-primary" th:href="|/alumnos/edit/${alumno.id}|">actualizar</a>
-                        <a class="btn btn-danger" th:href="@{/alumnos/delete/}+${alumno.id}">borrar</a>
+                        <a class="btn btn-primary" th:href="|/alumnos/edit/${alumno.id}|">Actualizar</a>
+                        <a class="btn btn-danger" th:href="@{/alumnos/delete/}+${alumno.id}">Borrar</a>
+                        <a class="btn btn-success" th:href="@{/matriculaAlumnos/alumnos/}+${alumno.id}">Matricular</a>
                     </td>
                 </tr>
             </tbody>

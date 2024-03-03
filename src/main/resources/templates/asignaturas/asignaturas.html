@@ -31,6 +31,7 @@
                         <td>
                             <a class="btn btn-primary" th:href="|/asignaturas/edit/${asignatura.id}|">actualizar</a>
                             <a class="btn btn-danger" th:href="@{/asignaturas/delete/}+${asignatura.id}">borrar</a>
+                            <a class="btn btn-success" th:href="@{/matriculaAlumnos/asignatura/}+${asignatura.id}">Matricular</a>
                         </td>
                     </tr>
                 </tbody>

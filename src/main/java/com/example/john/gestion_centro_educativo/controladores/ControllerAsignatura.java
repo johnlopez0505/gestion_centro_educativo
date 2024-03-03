@@ -19,7 +19,7 @@ import com.example.john.gestion_centro_educativo.repos.RepoAsignatura;
 
 @Controller
 @RequestMapping("/asignaturas")
-public class ControllerAsigantura {
+public class ControllerAsignatura {
 
     @Autowired
     private RepoAsignatura repoAsignatura;

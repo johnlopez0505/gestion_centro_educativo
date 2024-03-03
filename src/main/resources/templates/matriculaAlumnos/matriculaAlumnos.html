@@ -20,19 +20,22 @@
                     <th>Apellido</th>
                     <th>Télefono</th>
                     <th>Email</th>
+                    <th>Módulo</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="alumno: ${alumnosMatriculados}">
-                    <td th:text="${alumno[0]}"></td>
-                    <td th:text="${alumno[1]}"></td>
-                    <td th:text="${alumno[2]}"></td>
-                    <td th:text="${alumno[3]}"></td>
-                    <td th:text="${alumno[4]}"></td>
+                <tr th:each="matricula: ${matriculas}">
+                    <td th:text="${matricula.Alumno.id}"></td>
+                    <td th:text="${matricula.Alumno.nombre}"></td>
+                    <td th:text="${matricula.Alumno.apellido}"></td>
+                    <td th:text="${matricula.Alumno.telefono}"></td>
+                    <td th:text="${matricula.Alumno.email}"></td>
+                    <td th:text="${matricula.Asignatura.nombre}"></td>
+                   
                     <td>
-                        <a class="btn btn-primary" th:href="|/matriculaAlumnos/edit/${alumno[0]}|">actualizar</a>
-                        <a class="btn btn-danger" th:href="@{/matriculaAlumnos/delete/}+${alumno[0]}">borrar</a>
+                        <a class="btn btn-primary" th:href="|/matriculaAlumnos/edit/${matricula.id}|">Actualizar</a>
+                        <a class="btn btn-danger" th:href="@{/matriculaAlumnos/delete/}+${matricula.id}">Eliminar</a>
                     </td>
                 </tr>
             </tbody>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestion Academica</title>
+  <th:block th:replace="~{fragmentos/general.html :: headerfiles}"></th:block>
+</head>
+
+<body>
+    <div class="container" style="height:50px;"></div>
+    <div class="container">
+    <div th:replace="~{fragmentos/general.html :: navigation}"> </div>
+        <div class="container mt-5">
+            <h1 class="text-center ">Editar Matricula Alumno</h1>
+            <h4>Editar la Matricula del alumno 
+                <span th:text="|${matricula.Alumno.nombre} ${matricula.Alumno.apellido}|"> </span>
+            </h4>
+            <h4>Asignatura Actual: 
+                <span th:text="|${matricula.Asignatura.nombre}|"> </span>
+            </h4>
+            <p>Seleccione la Asignaturas en la que va a matricular al alumno seleccionado</p>
+            <form th:action="@{/matriculaAlumnos/edit/}+${matricula.id}"
+                th:object="${asignaturas}"
+                method="post">
+                <input type="number" name="matricula" hidden th:value="${matricula.id}" />
+                <div class="form-control">
+                    <label for="asignatura">Módulo:</label>
+                    <select class="form-select" name="asignatura" id="seleccion" required>
+                        <option 
+                            th:each="asignatura : ${asignaturas}"
+                            th:value="${asignatura.id}"
+                            th:text="|${asignatura.nombre} ${asignatura.ciclo}|"
+                           
+                        >
+                        </option>
+                    </select>
+                </div>
+
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <button type='submit' class="btn btn-outline-success"> Guardar</button>
+                </div>
+                </br>
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <a href='/matriculaAlumnos' class="btn btn-outline-success"> Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div th:replace="~{fragmentos/general.html :: footer}"></div>
+</div>
+</body>
+
+</html>

@@ -40,7 +40,7 @@ public class ControllerAlumno {
 
     @PostMapping("/add")
     public String postMethodName(
-        @ModelAttribute("categoria") Alumno alumno)  {
+        @ModelAttribute("alumno") Alumno alumno)  {
         repoAlumno.save(alumno);
         return "redirect:/alumnos";
     }

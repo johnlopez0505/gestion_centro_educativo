@@ -24,6 +24,4 @@ public class Alumno {
     private String email;
     @Column(length =20)
     private String telefono;
-    @OneToOne
-    private User usuario;
 }
