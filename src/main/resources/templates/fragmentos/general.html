@@ -11,8 +11,8 @@
 
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
 
-        <div th:fragment="navigation">
-            <nav class="navbar navbar-dark bg-dark fixed-top ">
+        <div sec:authorize="hasAuthority('gestor')" th:fragment="navigation" >
+            <nav  class="navbar navbar-dark bg-dark fixed-top ">
                 <div class="container-fluid ">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"

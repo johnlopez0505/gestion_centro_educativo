@@ -24,7 +24,7 @@ import com.example.john.gestion_centro_educativo.repos.RepoMatriculaAlumno;
 @RequestMapping("/matriculaAlumnos")
 public class ControllerMatriculaAlumno {
 
-     @Autowired
+    @Autowired
     RepoMatriculaAlumno repoMatriculaAlumno;
    
     @Autowired
@@ -76,7 +76,8 @@ public class ControllerMatriculaAlumno {
     
 
     @GetMapping("/alumnos/{idAlumno}")
-    public String addMatricula(@PathVariable("idAlumno") @NonNull Integer idAlumno, Model modelo) {
+    public String addMatricula(@PathVariable("idAlumno") 
+    @NonNull Integer idAlumno, Model modelo) {
         Optional <Alumno> oAlumno = repoAlumno.findById(idAlumno);
         if(oAlumno.isPresent()) {
             modelo.addAttribute("alumno", oAlumno.get());
@@ -92,7 +93,8 @@ public class ControllerMatriculaAlumno {
     }
 
     @PostMapping("/alumnos/{idAlumno}")
-     public String addMatricula( @PathVariable @NonNull Integer idAlumno, @ModelAttribute("asignatura") MatriculaAlumno matriculaAlumno, Model modelo) {
+     public String addMatricula( @PathVariable @NonNull Integer idAlumno, 
+     @ModelAttribute("asignatura") MatriculaAlumno matriculaAlumno, Model modelo) {
         Optional<Alumno> oAlumno = repoAlumno.findById(idAlumno);
         if (oAlumno.isPresent()) {
             Alumno alumno = oAlumno.get();
