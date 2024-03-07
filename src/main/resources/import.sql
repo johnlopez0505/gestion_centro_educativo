@@ -40,8 +40,8 @@ INSERT INTO `rol` (`id`, `nombre`) VALUES (2,'alumno');
 INSERT INTO `rol` (`id`, `nombre`) VALUES (3,'profesor');
 
 
-INSERT INTO `user`(`enabled`, `rol_id`, `alumno_id`, `profesor_id`, `password`, `username`)  VALUES (1,1,null,null,'$2a$10$EDSgHKW3EGzc8HzTzBYPDec/dACrsgHE4d8GSGGoru7bAs0ZbdB4y','john lopez');
-INSERT INTO `user`(`enabled`, `rol_id`, `alumno_id`, `profesor_id`, `password`, `username`)  VALUES (1,2,1,null,'$2a$10$EDSgHKW3EGzc8HzTzBYPDec/dACrsgHE4d8GSGGoru7bAs0ZbdB4y','john');
+INSERT INTO `user`(`enabled`, `rol_id`, `alumno_id`, `profesor_id`, `password`, `username`)  VALUES (1,1,null,null,'$2a$10$EDSgHKW3EGzc8HzTzBYPDec/dACrsgHE4d8GSGGoru7bAs0ZbdB4y','john');
+INSERT INTO `user`(`enabled`, `rol_id`, `alumno_id`, `profesor_id`, `password`, `username`)  VALUES (1,2,1,null,'$2a$10$EDSgHKW3EGzc8HzTzBYPDec/dACrsgHE4d8GSGGoru7bAs0ZbdB4y','pepe');
 INSERT INTO `user`(`enabled`, `rol_id`, `alumno_id`, `profesor_id`, `password`, `username`)  VALUES (1,2,2,null,'$2a$10$EDSgHKW3EGzc8HzTzBYPDec/dACrsgHE4d8GSGGoru7bAs0ZbdB4y','juan');
 INSERT INTO `user`(`enabled`, `rol_id`, `alumno_id`, `profesor_id`, `password`, `username`)  VALUES (1,2,3,null,'$2a$10$EDSgHKW3EGzc8HzTzBYPDec/dACrsgHE4d8GSGGoru7bAs0ZbdB4y','alejandro');
 INSERT INTO `user`(`enabled`, `rol_id`, `alumno_id`, `profesor_id`, `password`, `username`)  VALUES (1,2,4,null,'$2a$10$EDSgHKW3EGzc8HzTzBYPDec/dACrsgHE4d8GSGGoru7bAs0ZbdB4y','pablo');
