@@ -44,6 +44,7 @@ public class ControllerUser {
     public String addUsuario(Model modelo) {
         List<Rol> roles = repoRol.findAll();
         modelo.addAttribute("usuario", new User());
+        modelo.addAttribute("rols", repoRol.findAll());
         modelo.addAttribute("roles", roles);
         return "usuarios/add";
     }

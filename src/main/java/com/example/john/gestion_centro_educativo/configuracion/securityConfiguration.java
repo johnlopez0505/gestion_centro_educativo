@@ -52,7 +52,15 @@ public class securityConfiguration {
                 // Con Spring Security 6.2 y 7: usando Lambda DSL
 
                 http
+
                         .authorizeHttpRequests((requests) -> requests
+                                .requestMatchers("/webjars/**", "/img/**", "/js/**", "/register/**", "/ayuda/**", "/login")
+                                .permitAll() 
+                                .requestMatchers(  "/usuarios/**","/alumnos/**", "/profesores/**", "/asignaturas/**",
+                                        "/matriculaAlumnos/**", "/matriculaProfesores/**")
+                                //.authenticated()
+                                .hasAuthority("gestor")
+                        ).authorizeHttpRequests((requests) -> requests
                                 .requestMatchers("/webjars/**", "/img/**", "/js/**", "/register/**", "/ayuda/**", "/login")
                                 .permitAll() 
                                 .requestMatchers("/alumnos/**", "/profesores/**", "/asignaturas/**")
@@ -64,13 +72,6 @@ public class securityConfiguration {
                                 .requestMatchers("/alumnos/**", "/profesores/**", "/asignaturas/**")
                                 //.authenticated()
                                 .hasAuthority("profesor")
-                        ).authorizeHttpRequests((requests) -> requests
-                                .requestMatchers("/webjars/**", "/img/**", "/js/**", "/register/**", "/ayuda/**", "/login")
-                                .permitAll() 
-                                .requestMatchers("/usuarios/**", "/alumnos/**", "/profesores/**", "/asignaturas/**",
-                                        "/matriculaAlumnos/**", "/matriculaProfesores/**")
-                                //.authenticated()
-                                .hasAuthority("gestor")
                         ).formLogin((formLogin) -> formLogin
                                 .permitAll()
                         ).rememberMe(

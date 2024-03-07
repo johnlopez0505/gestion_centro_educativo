@@ -7,51 +7,62 @@
 </head>
 
 <body>
-
+        <div class="container" style="height:50px;"></div>
+        <div class="container">
         <div th:replace="~{fragmentos/general.html :: navigation}"> </div>
-
-        <div class="input-group mb-3 mx-auto mt-5" style="width: 80%;">
-            <h3>Añadir usuarios</h3>
-
-            <form th:action="@{/usuarios/add}" th:object="${usuario}" method="post">
-                <div class="border">
-                    <div class="row g-3 m-2">
-                        <div class="col-md-6">
-                            <label class="form-label">Enable: <input type="text" th:field="*{enabled}"
-                                    class="form-control" /></label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">rol: <input type="text" th:field="*{rol}"
-                                    class="form-control" /></label>
-                        </div>
-                    </div>
-                </div>
-              
-                <div class="border">
-                    <div class="row g-3 m-2">
-                        <div class="col-md-6">
-                            <label class="form-label">Nombre de usuario: <input type="text" th:field="*{username}"
-                                    class="form-control" /></label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Contraseña: <input type="password" th:field="*{password}"
-                                    class="form-control" /></label>
+            <div class="container mt-5">
+                <h3 class="text-center ">Añadir usuarios</h3>
+                <form th:action="@{/usuarios/add}" th:object="${usuario}" method="post">
+                    <div class="border">
+                        <div class="row g-4 m-2">
+                            <div class="col-md-6" style="width:300px;">
+                                <label class="form-label">Roles:
+                                    <select th:field="*{rol}"  class="form-select" >
+                                        <option th:each="rol : ${roles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
+                                    </select>
+                                </label>
+                            </div>
+    
+                            <div class="col-md-6" style="width:300px;">
+                                <label class="form-label">IdAlumno: <input type="number" th:field="*{alumno}"
+                                        class="form-control" /></label>
+                            </div>
+                            <div class="col-md-6" style="width:300px;">
+                                <label class="form-label">IdProfesor: <input type="number" th:field="*{profesor}"
+                                        class="form-control" /></label>
+                            </div>
+                            <div class="col-md-6" style="width:300px;">
+                                <label class="form-label">Enable: <input type="text" th:field="*{enabled}"
+                                        class="form-control" /></label>
+                            </div>
                         </div>
                     </div>
-                </div>
-              
-                <div class="border">
-                    <div class="row g-3 m-2">
-                        <div class="col-md-6">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                            <a href="/usuarios" class="btn btn-danger">Cancelar</a>
+                
+                    <div class="border">
+                        <div class="row g-3 m-2">
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre de usuario: <input type="text" th:field="*{username}"
+                                        class="form-control" /></label>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Contraseña: <input type="password" th:field="*{password}"
+                                        class="form-control" /></label>
+                            </div>
                         </div>
                     </div>
-            </form>
-
-            <div th:replace="~{fragmentos/general.html :: footer}"></div>
-        
+                
+                    <div class="border">
+                        <div class="row g-3 m-2">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <a href="/usuarios" class="btn btn-danger">Cancelar</a>
+                            </div>
+                        </div>
+                </form>
+            </div>  
+        <div th:replace="~{fragmentos/general.html :: footer}"></div> 
     </div>
+   
 </body>
 
 </html>

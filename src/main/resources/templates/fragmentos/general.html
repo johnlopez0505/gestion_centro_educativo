@@ -102,6 +102,12 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/ayuda">Ayuda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/acerca">Acerca de</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
                                 </li>
                             </ul>
@@ -171,6 +177,7 @@
                 </div>
             </nav>
         </div>
+        
         <div sec:authorize="hasAuthority('profesor')" th:fragment="navigation" >
             <nav  class="navbar navbar-dark bg-dark fixed-top ">
                 <div class="container-fluid ">
