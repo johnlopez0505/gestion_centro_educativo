@@ -17,7 +17,6 @@
             <tr>
               <td>IdUsuario</td>
               <td>Username</td>
-              <td>Password</td>
               <td>Rol</td>
               <td>IdAlumno</td>
               <td>IdProfesor</td>
@@ -29,7 +28,6 @@
             <tr th:each="usuario: ${usuarios}">
               <td th:text="${usuario.id}"></td>
               <td th:text="${usuario.username}"></td>
-              <td th:text="${usuario.password}"></td>
               <td th:text="${usuario.rol.nombre}"></td>
               <td th:text="${usuario.Alumno != null ? usuario.alumno.id : 'No asignado'}"></td>
               <td th:text="${usuario.Profesor != null ? usuario.profesor.id : 'No asignado'}"></td>
