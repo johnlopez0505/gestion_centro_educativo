@@ -19,7 +19,7 @@
                 <span th:text="|${matricula.Asignatura.nombre}|"> </span>
             </h4>
             <p>Seleccione la Asignaturas en la que va a matricular al alumno seleccionado</p>
-            <form th:action="@{/matriculaAlumnos/edit/}+${matricula.id}"
+            <form th:action="@{/matriculaAlumnos/add/}+${matricula.id}"
                 th:object="${asignaturas}"
                 method="post">
                 <input type="number" name="matricula" hidden th:value="${matricula.id}" />

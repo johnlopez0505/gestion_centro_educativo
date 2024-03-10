@@ -44,32 +44,28 @@ public class securityConfiguration {
         public PasswordEncoder encoder() {
                 return new BCryptPasswordEncoder();
         }
-         
 
-        @Bean
-        public SecurityFilterChain filter(HttpSecurity http) throws Exception {
+
+    @Bean
+    SecurityFilterChain filter(HttpSecurity http) throws Exception {
                 
                 // Con Spring Security 6.2 y 7: usando Lambda DSL
 
-                http
-                        .authorizeHttpRequests((requests) -> requests
+                http.authorizeHttpRequests((requests) -> requests
                                 .requestMatchers("/webjars/**", "/img/**", "/js/**", "/register/**", "/ayuda/**", "/login")
                                 .permitAll() 
-                                .requestMatchers("/alumnos/**", "/profesores/**", "/asignaturas/**")
-                                //.authenticated()
+                                .requestMatchers("/detalleProfesor/**" )
+                                .hasAuthority("profesor")
+                        ) .authorizeHttpRequests((requests) -> requests
+                                .requestMatchers("/webjars/**", "/img/**", "/js/**", "/register/**", "/ayuda/**", "/login")
+                                .permitAll() 
+                                .requestMatchers("/detalleAlumno/**")
                                 .hasAuthority("alumno")
                         ).authorizeHttpRequests((requests) -> requests
-                                .requestMatchers("/webjars/**", "/img/**", "/js/**", "/register/**", "/ayuda/**", "/login")
+                                .requestMatchers("/webjars/**","/img/**","/js/**","/register/**","/ayuda/**","/login")
                                 .permitAll() 
-                                .requestMatchers("/alumnos/**", "/profesores/**", "/asignaturas/**")
-                                //.authenticated()
-                                .hasAuthority("profesor")
-                        ).authorizeHttpRequests((requests) -> requests
-                                .requestMatchers("/webjars/**", "/img/**", "/js/**", "/register/**", "/ayuda/**", "/login")
-                                .permitAll() 
-                                .requestMatchers("/usuarios/**", "/alumnos/**", "/profesores/**", "/asignaturas/**",
-                                        "/matriculaAlumnos/**", "/matriculaProfesores/**")
-                                //.authenticated()
+                                .requestMatchers(  "/usuarios/**","/alumnos/**","/profesores/**","/asignaturas/**",
+                                        "/matriculaAlumnos/**","/matriculaProfesores/**")
                                 .hasAuthority("gestor")
                         ).formLogin((formLogin) -> formLogin
                                 .permitAll()
@@ -81,7 +77,8 @@ public class securityConfiguration {
                                 // .deleteCookies("JSESSIONID") // no es necesario, JSESSIONID se hace por defecto
                                 .permitAll()                                
                        
-                        );
+                        ).csrf((protection) -> protection
+                         .disable());
                 return http.build();
 
         }

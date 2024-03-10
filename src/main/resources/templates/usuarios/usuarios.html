@@ -10,14 +10,13 @@
   <div class="container">
     <div th:replace="~{fragmentos/general.html :: navigation}"> </div>
 
-      <div class="input-group mb-3 mx-auto mt-5" style="width: 80%;">
+      <div class="input-group mb-3 mx-auto mt-5" style="width: 100%;">
         <h3 class="mt-5 mx-auto">Lista de Usuarios:</h3>
-        <table class="table table-striped mt-2">
+        <table class="table table-striped mt-2" style="width: 100%;">
           <thead>
             <tr>
               <td>IdUsuario</td>
               <td>Username</td>
-              <td>Password</td>
               <td>Rol</td>
               <td>IdAlumno</td>
               <td>IdProfesor</td>
@@ -29,7 +28,6 @@
             <tr th:each="usuario: ${usuarios}">
               <td th:text="${usuario.id}"></td>
               <td th:text="${usuario.username}"></td>
-              <td th:text="${usuario.password}"></td>
               <td th:text="${usuario.rol.nombre}"></td>
               <td th:text="${usuario.Alumno != null ? usuario.alumno.id : 'No asignado'}"></td>
               <td th:text="${usuario.Profesor != null ? usuario.profesor.id : 'No asignado'}"></td>

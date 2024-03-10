@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.john.gestion_centro_educativo.modelos.Rol;
 import com.example.john.gestion_centro_educativo.modelos.User;
 import com.example.john.gestion_centro_educativo.repos.RepoRol;
-import com.example.john.gestion_centro_educativo.repos.RepoUser;
+import com.example.john.gestion_centro_educativo.repos.RepoUser;;
+
+
 
 @Controller
 @RequestMapping("/usuarios")
@@ -50,25 +54,15 @@ public class ControllerUser {
 
     @PostMapping("/add")
     public String addUsuario(@ModelAttribute("usuario") @NonNull User usuario) {
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String password = passwordEncoder.encode(usuario.getPassword());
+        usuario.setPassword(password);
         repoUser.save(usuario);
         return "redirect:/usuarios";
     }
 
-    @GetMapping("/delete/{id}")
-    public String deleteUsuarioForm(Model modelo, @PathVariable("id") @NonNull Integer id) {
-        Optional<User> oUsuario = repoUser.findById(id);
-        if (oUsuario.isPresent())
-            modelo.addAttribute(
-            "usuario", oUsuario.get());
-        else {
-            modelo.addAttribute(
-                "mensaje", "El usuario consultado no existe.");
-            return "error";
-        }
-        return "usuarios/delete";
-    }
 
-    @PostMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String deleteUsuario(@PathVariable("id") @NonNull Integer id) {
         repoUser.deleteById(id);
         return "redirect:/usuarios";
@@ -88,5 +82,6 @@ public class ControllerUser {
             return "error";
         }
     }
+    
 
 }
