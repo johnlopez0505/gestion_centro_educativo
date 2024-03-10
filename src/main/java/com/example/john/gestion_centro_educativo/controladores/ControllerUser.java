@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.john.gestion_centro_educativo.modelos.Rol;
 import com.example.john.gestion_centro_educativo.modelos.User;
 import com.example.john.gestion_centro_educativo.repos.RepoRol;
-import com.example.john.gestion_centro_educativo.repos.RepoUser;
+import com.example.john.gestion_centro_educativo.repos.RepoUser;;
+
+
 
 @Controller
 @RequestMapping("/usuarios")
@@ -46,7 +48,6 @@ public class ControllerUser {
     public String addUsuario(Model modelo) {
         List<Rol> roles = repoRol.findAll();
         modelo.addAttribute("usuario", new User());
-        modelo.addAttribute("rols", repoRol.findAll());
         modelo.addAttribute("roles", roles);
         return "usuarios/add";
     }
@@ -81,5 +82,6 @@ public class ControllerUser {
             return "error";
         }
     }
+    
 
 }

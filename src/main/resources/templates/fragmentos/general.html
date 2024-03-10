@@ -11,8 +11,8 @@
 
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
 
-        <div sec:authorize="hasAuthority('gestor')" th:fragment="navigation" >
-            <nav  class="navbar navbar-dark bg-dark fixed-top ">
+        <div  th:fragment="navigation" >
+            <nav sec:authorize="hasAuthority('gestor')" class="navbar navbar-dark bg-dark fixed-top ">
                 <div class="container-fluid ">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
@@ -27,7 +27,7 @@
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                                 aria-label="Close"></button>
                         </div>
-                        <div class="offcanvas-body">
+                        <div sec:authorize="hasAuthority('gestor')" class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="/">Home</a>
@@ -138,6 +138,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/detalleAlumno">Tus Asignaturas</a>
+                                </li>
                               
                                
                                 <li class="nav-item dropdown">
@@ -178,8 +181,8 @@
             </nav>
         </div>
         
-        <div sec:authorize="hasAuthority('profesor')" th:fragment="navigation" >
-            <nav  class="navbar navbar-dark bg-dark fixed-top ">
+        <div  th:fragment="navigation" >
+            <nav sec:authorize="hasAuthority('profesor')" class="navbar navbar-dark bg-dark fixed-top ">
                 <div class="container-fluid ">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
@@ -243,6 +246,14 @@
             <footer>
                 <div class="text-center">                    
                     <hr/>
+                    <p>Entró en el sistema como: 
+                        <span th:text="${#authentication.name}"></span>
+                        (<span th:text="${#authentication.authorities[0]}"></span>)
+                        <p sec:authorize="hasAuthority('gestor')">
+                            <b>Este párrafo sólo se ve si eres un admin</b>
+                        </p>
+                    </p>
+
                     <p>
                         <span class="text-center">Ⓒ 2024. IES Virgen del Carmen. CFGS Desarrollo Multiplataforma.</span>
                     </p>
